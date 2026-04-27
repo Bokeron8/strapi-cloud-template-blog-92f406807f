@@ -3,7 +3,7 @@
   "collectionName": "configuracion",
   "info": {
     "singularName": "configuracion",
-    "pluralName": "configuracion",
+    "pluralName": "configuraciones",
     "displayName": "Configuración",
     "description": "Configuración general de Suspicacias Viaje"
   },
