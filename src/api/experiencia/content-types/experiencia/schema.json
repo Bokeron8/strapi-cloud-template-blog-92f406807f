@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experiencias",
+  "info": {
+    "singularName": "experiencia",
+    "pluralName": "experiencias",
+    "displayName": "Experiencia",
+    "description": "Experiencias exclusivas para adultos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
+    },
+    "descripcion": {
+      "type": "richtext",
+      "required": true
+    },
+    "tipo_experiencia": {
+      "type": "enumeration",
+      "enum": ["intima", "couple", "spa", "sensual"],
+      "required": true
+    },
+    "nivel": {
+      "type": "enumeration",
+      "enum": ["premium", "exclusive", "vip"],
+      "required": true
+    },
+    "precio": {
+      "type": "integer",
+      "required": true
+    },
+    "duracion": {
+      "type": "string",
+      "required": true
+    },
+    "imagenes": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    },
+    "itinerario": {
+      "type": "richtext"
+    },
+    "kit_incluido": {
+      "type": "richtext"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

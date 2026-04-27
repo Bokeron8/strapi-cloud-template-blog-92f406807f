@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "configuracion",
+  "info": {
+    "singularName": "configuracion",
+    "pluralName": "configuracion",
+    "displayName": "Configuración",
+    "description": "Configuración general de Suspicacias Viaje"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "whatsapp": {
+      "type": "string",
+      "required": true
+    },
+    "mensaje_plantilla": {
+      "type": "text",
+      "required": true
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    }
+  }
+}
