@@ -1,18 +1,9 @@
-import { Core } from '@strapi/strapi';
+'use strict';
 
-export default {
-  /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   */
+module.exports = {
   register() {},
-
-  /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   */
-  async bootstrap({ strapi }: { strapi: Core.Strapi }) {
-    // Initial configuration seed using Document Service (Strapi v5)
+  async bootstrap({ strapi }) {
+    // Initial configuration seed
     try {
       const config = await strapi.documents('api::configuracion.configuracion').findFirst();
       
@@ -28,17 +19,17 @@ export default {
         });
         console.log('✅ Configuración inicial creada.');
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error('❌ Error en seed de configuración:', err.message);
     }
 
     // Experiencias seed
     try {
-      const { total } = await strapi.documents('api::experiencia.experiencia').findMany({
+      const experiences = await strapi.documents('api::experiencia.experiencia').findMany({
         limit: 1
       });
 
-      if (total === 0) {
+      if (experiences.length === 0) {
         const mockExps = [
           {
             titulo: "Noche de seducción en Buenos Aires",
@@ -72,11 +63,11 @@ export default {
         }
         console.log('✅ Experiencias iniciales creadas.');
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error('❌ Error en seed de experiencias:', err.message);
     }
 
-    // Auto-set public permissions for API access
+    // Auto-set public permissions
     try {
       const publicRole = await strapi.query('plugin::users-permissions.role').findOne({
         where: { type: 'public' },
@@ -102,7 +93,7 @@ export default {
         }
         console.log('✅ Permisos públicos configurados automáticamente.');
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error('❌ Error configurando permisos:', err.message);
     }
   },
