@@ -4,8 +4,7 @@
   "info": {
     "singularName": "configuracion",
     "pluralName": "configuraciones",
-    "displayName": "Configuración",
-    "description": "Configuración general de Suspicacias Viaje"
+    "displayName": "Configuracion"
   },
   "options": {
     "draftAndPublish": false
