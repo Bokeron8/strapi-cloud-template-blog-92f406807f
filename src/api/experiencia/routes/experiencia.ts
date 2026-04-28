@@ -1,3 +1,3 @@
 import { factories } from '@strapi/strapi';
 
-export default factories.createCoreRouter('api::experiencia.experiencia' as any);
+export default factories.createCoreRouter('api::experiencia.experiencia');
