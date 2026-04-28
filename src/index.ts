@@ -1,13 +1,13 @@
-'use strict';
+import { Core } from '@strapi/strapi';
 
-module.exports = {
+export default {
   /**
    * An asynchronous register function that runs before
    * your application is initialized.
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) {},
+  register(/*{ strapi }: { strapi: Core.Strapi }*/) {},
 
   /**
    * An asynchronous bootstrap function that runs before
@@ -16,7 +16,7 @@ module.exports = {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  async bootstrap({ strapi }) {
+  async bootstrap({ strapi }: { strapi: Core.Strapi }) {
     // Initial configuration seed
     const configExists = await strapi.db.query('api::configuracion.configuracion').findOne();
     if (!configExists) {
@@ -91,7 +91,7 @@ module.exports = {
         }
       }
       console.log('✅ Permisos públicos configurados automáticamente.');
-    } catch (err) {
+    } catch (err: any) {
       console.error('❌ Error configurando permisos:', err.message);
     }
   },
