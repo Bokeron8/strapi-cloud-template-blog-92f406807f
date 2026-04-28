@@ -1,8 +1,27 @@
 {
-  "extends": "@strapi/typescript-utils/tsconfigs/server.json",
   "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2021",
+    "lib": ["ES2021"],
+    "moduleResolution": "node",
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
     "outDir": "dist",
-    "rootDir": "."
+    "rootDir": ".",
+    "baseUrl": ".",
+    "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": [
     "./",
