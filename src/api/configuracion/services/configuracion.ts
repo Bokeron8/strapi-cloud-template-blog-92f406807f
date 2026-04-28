@@ -1,3 +1,3 @@
 import { factories } from '@strapi/strapi';
 
-export default factories.createCoreService('api::configuracion.configuracion');
+export default factories.createCoreService('api::configuracion.configuracion' as any);
